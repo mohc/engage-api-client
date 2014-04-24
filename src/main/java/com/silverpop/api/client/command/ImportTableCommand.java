@@ -15,7 +15,6 @@ public class ImportTableCommand implements ApiCommand {
 	@XStreamAlias("SOURCE_FILE")
 	private String sourceFile;
 
-	@Override
 	public Class<DataJobResult> getResultType() {
 		return DataJobResult.class;
 	}

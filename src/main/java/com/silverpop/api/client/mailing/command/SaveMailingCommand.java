@@ -1,6 +1,5 @@
 package com.silverpop.api.client.mailing.command;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
 import com.silverpop.api.client.ApiCommand;
@@ -25,7 +24,6 @@ public class SaveMailingCommand implements ApiCommand {
 	private SaveMailingForwardToFriend forwardToFriend;
 	
 	
-	@Override
 	public Class<SaveMailingResult> getResultType() {
 		return SaveMailingResult.class;
 	}

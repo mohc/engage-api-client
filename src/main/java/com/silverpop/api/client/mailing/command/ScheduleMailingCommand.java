@@ -74,7 +74,6 @@ public class ScheduleMailingCommand implements ApiCommand {
     @XStreamAlias("PUBLISH_TO_SOCIALS")
     private List<AuthorizedSocialNetwork> authorizedSocialNetworks;
 	
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return ScheduleMailingResult.class;
 	}

@@ -39,7 +39,6 @@ public class XmlApiRequest implements ApiRequest {
 		this.annotationUtility = annotationUtility;
 	}
 	
-	@Override
 	public Map<String,String> getHeaders() {
         if (!EncodedApiCommand.NO_ENCODING.equals(encoding)) {
             headers.put("Content-Type", "application/x-www-form-urlencoded; charset=" + encoding);
@@ -47,17 +46,14 @@ public class XmlApiRequest implements ApiRequest {
         return headers;
 	}
 
-    @Override
     public void addHeader(String key, String value) {
         headers.put(key, value);
     }
 
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return apiCommand.getResultType();
 	}
 	
-	@Override
 	public Map<String, String> getParameters() {
 		Map<String,String> requestParameters = new HashMap<String,String>();
 		requestParameters.put(SESSION_PARAMETER, apiSession.getSessionId());

@@ -29,7 +29,6 @@ public class DeleteListCommand implements ApiCommand {
     private boolean isRecursive;
 
 
-    @Override
     public Class<? extends ApiResult> getResultType() {
         return DeleteListResult.class;
     }

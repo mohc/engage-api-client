@@ -24,7 +24,6 @@ public class SetColumnValueCommand implements ApiCommand{
 	@XStreamAlias("EMAIL")
 	private String email;
 
-	@Override
 	public Class<DataJobResult> getResultType() {
 		return DataJobResult.class;
 	}

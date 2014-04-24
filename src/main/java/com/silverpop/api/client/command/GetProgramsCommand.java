@@ -29,7 +29,6 @@ public class GetProgramsCommand implements ApiCommand {
 	@XStreamAlias("INCLUDE_TAGS")
 	private IncludeTags includeTags;
 	
-	@Override
 	public Class<GetProgramsResult> getResultType() {
 		return GetProgramsResult.class;
 	}

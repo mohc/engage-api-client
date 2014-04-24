@@ -22,7 +22,6 @@ public class LoginCommand implements ApiCommand {
 		this.password = password;
 	}
 
-	@Override
 	public Class<LoginResult> getResultType() {
 		return LoginResult.class;
 	}

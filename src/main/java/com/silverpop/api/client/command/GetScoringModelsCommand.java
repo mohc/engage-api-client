@@ -7,7 +7,6 @@ import com.silverpop.api.client.result.GetScoringModelsResult;
 
 @XmlApiProperties("GetScoringModels")
 public class GetScoringModelsCommand implements ApiCommand {
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return GetScoringModelsResult.class;
 	}

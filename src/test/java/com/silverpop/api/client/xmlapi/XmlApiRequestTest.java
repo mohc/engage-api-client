@@ -30,7 +30,6 @@ public class XmlApiRequestTest {
 	
 	@XmlApiProperties("XmlApiCommand")
 	private class XmlApiCommandImpl implements com.silverpop.api.client.ApiCommand {
-		@Override
 		public Class<? extends ApiResult> getResultType() {
 			return ApiResult.class;
 		}

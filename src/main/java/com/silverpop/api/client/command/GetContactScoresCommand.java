@@ -13,7 +13,6 @@ public class GetContactScoresCommand implements ApiCommand {
 	@XStreamAlias("CONTACT_ID")
 	private Integer contactId;
 
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return GetContactScoresResult.class;
 	}

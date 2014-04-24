@@ -15,7 +15,6 @@ public class EncodedApiCommand implements ApiCommand {
 		this.encoding = encoding;
 	}
 
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return command.getResultType();
 	}

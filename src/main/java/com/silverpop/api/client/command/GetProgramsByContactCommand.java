@@ -45,7 +45,6 @@ public class GetProgramsByContactCommand implements ApiCommand {
 	private String includeHistory;
 
 
-	@Override
 	public Class<GetProgramsByContactResult> getResultType() {
 		return GetProgramsByContactResult.class;
 	}

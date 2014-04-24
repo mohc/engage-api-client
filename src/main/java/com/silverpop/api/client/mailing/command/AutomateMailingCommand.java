@@ -19,7 +19,6 @@ public class AutomateMailingCommand implements ApiCommand {
 	@XStreamAlias("STATE")
 	private String state;
 	
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return AutomateMailingResult.class;
 	}

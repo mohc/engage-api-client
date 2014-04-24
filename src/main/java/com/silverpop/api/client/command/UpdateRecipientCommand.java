@@ -42,7 +42,6 @@ public class UpdateRecipientCommand implements ApiCommand {
         columns = new ArrayList<Column>();
     }
 
-    @Override
     public Class<RecipientResult> getResultType() {
         return RecipientResult.class;
     }

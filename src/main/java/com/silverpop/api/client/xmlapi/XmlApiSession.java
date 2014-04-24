@@ -67,23 +67,19 @@ public class XmlApiSession implements ApiSession {
 		sessionEncoding = "";
 		open = false;
 	}
-
-	@Override
+	
 	public String getUrl() {
 		return url;
 	}
 
-	@Override
 	public boolean isReAuthenticate() {
 		return reauthenticate;
 	}
 
-	@Override
 	public boolean isOpen() {
 		return open;
 	}
 
-	@Override
 	public void close() {
         if (isOpen()) {
             executeLogout();
@@ -91,7 +87,6 @@ public class XmlApiSession implements ApiSession {
         clearState();
     }
 
-	@Override
 	public void open() {
 		if(!isOpen()) {
 			LoginResult result = executeLogin();

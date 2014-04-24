@@ -16,13 +16,11 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 
     private Log log = LogFactory.getLog(this.getClass());
 
-	@Override
 	public XmlApiRequest prepareRequest(ApiCommand command, ApiSession session) {
 		return new XmlApiRequest(command, (XmlApiSession) session);
 	}
 
 	
-	@Override
 	public HttpMethodBase prepareMethod(String url, XmlApiRequest request) {
 		PostMethod postMethod = new PostMethod(url);
 		postMethod = addRequestHeaders(request.getHeaders(), postMethod);
@@ -48,7 +46,6 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 
 	
 	
-	@Override
 	public ApiResponse processResponse(String response, Class<? extends ApiResult> resultClass) {
         log.info(response);
 		return new XmlApiResponse(response, resultClass);

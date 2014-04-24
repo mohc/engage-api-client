@@ -53,7 +53,6 @@ public class ApiClientTest {
 		when(commandProcessor.prepareRequest(apiCommand, session)).thenReturn(apiRequest);
 		when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
 		when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
-			@Override
 			public Integer answer(InvocationOnMock invocation) throws Throwable {
 				when(httpMethodBase.getResponseBodyAsString()).thenReturn(RESPONSE_BODY);
 				return null;
@@ -73,7 +72,6 @@ public class ApiClientTest {
 		when(commandProcessor.prepareRequest(apiCommand, session)).thenReturn(apiRequest);
 		when(commandProcessor.prepareMethod(URL, apiRequest)).thenReturn(httpMethodBase);
 		when(httpClient.executeMethod(httpMethodBase)).then(new Answer<Integer>() {
-			@Override
 			public Integer answer(InvocationOnMock invocation) throws Throwable {
 				when(httpMethodBase.getResponseBodyAsString()).thenReturn(RESPONSE_BODY);
 				return null;

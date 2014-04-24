@@ -16,7 +16,6 @@ public class GetListsCommand implements ApiCommand {
 	@XStreamAlias("LIST_TYPE")
 	private Integer listType = 0;    // Defaults to Regular lists
 
-	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return GetListsResult.class;
 	}

@@ -1,18 +1,9 @@
 package com.silverpop.api.client.xmlapi;
 
-import java.io.Reader;
 import java.io.StringReader;
-import java.io.StringWriter;
 
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathFactory;
-
-import org.w3c.dom.Document;
 
 import com.silverpop.api.client.ApiErrorResult;
 import com.silverpop.api.client.ApiException;
@@ -46,13 +37,11 @@ public class XmlApiResponse implements ApiResponse {
 		this.responseText = responseText;
 	}
 	
-	@Override
 	public boolean isSuccessful() {
         return responseText.contains("<SUCCESS>true</SUCCESS>") || responseText.contains("<SUCCESS>TRUE</SUCCESS>" );
 //        return responseText.contains("<SUCCESS>true</SUCCESS>");
 	}
 
-	@Override
 	public ApiResult buildResult() {
 		if(isSuccessful()) {
 			XmlApiResponseEnvelope envelope = processRequest(resultType);
@@ -62,7 +51,6 @@ public class XmlApiResponse implements ApiResponse {
 		}
 	}
 
-	@Override
 	public ApiErrorResult buildErrorResult() {
 		if(isSuccessful()) {
 			throw new ApiException("There is no error associated with this response.  Call buildResult() to get the result.");

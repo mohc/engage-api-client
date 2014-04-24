@@ -35,7 +35,6 @@ public class AddContactToProgramCommand implements ApiCommand{
     }
 
 
-@Override
     public Class<AddContactToProgramResult> getResultType() {
         return AddContactToProgramResult.class;
     }
