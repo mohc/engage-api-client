@@ -13,17 +13,20 @@ import com.silverpop.api.client.xmlapi.NoResponseApiErrorResult;
 
 public abstract class ApiClient<REQUEST extends ApiRequest> {
 
-    private Log log = LogFactory.getLog(this.getClass());
+  private Log log = LogFactory.getLog(this.getClass());
 
 	private ApiCommandProcessor<REQUEST> commandProcessor;
 	protected HttpClient httpClient;
-    protected ApiSession session;
+  protected ApiSession session;
 
 
-    public ApiSession getSession() {
-   		return session;
-   	}
-
+  public ApiSession getSession() {
+  	return session;
+  }
+   
+  public ApiCommandProcessor<REQUEST> getCommandProcessor() {
+  	return commandProcessor;
+  }
 
 	protected ApiClient(ApiCommandProcessor<REQUEST> commandProcessor, ApiSession session) {
 		this(commandProcessor, new HttpClient(), session);

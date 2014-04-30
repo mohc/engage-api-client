@@ -14,4 +14,8 @@ public class GetJobStatusParameters {
     public List<GetJobStatusParameter> getParameters() {
         return parameters;
     }
+    
+    private GetJobStatusParameters(List<GetJobStatusParameter> parameters) {
+    	this.parameters = parameters;
+    }
 }

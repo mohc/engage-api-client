@@ -37,6 +37,10 @@ public class XmlApiResponse implements ApiResponse {
 		this.responseText = responseText;
 	}
 	
+	public String getResponseText() {
+		return responseText;
+	}
+	
 	public boolean isSuccessful() {
         return responseText.contains("<SUCCESS>true</SUCCESS>") || responseText.contains("<SUCCESS>TRUE</SUCCESS>" );
 //        return responseText.contains("<SUCCESS>true</SUCCESS>");

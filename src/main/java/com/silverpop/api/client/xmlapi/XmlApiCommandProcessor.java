@@ -14,7 +14,8 @@ import com.silverpop.api.client.ApiSession;
 
 public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest> {
 
-    private Log log = LogFactory.getLog(this.getClass());
+  private Log log = LogFactory.getLog(this.getClass());
+  private String rawResponse;
 
 	public XmlApiRequest prepareRequest(ApiCommand command, ApiSession session) {
 		return new XmlApiRequest(command, (XmlApiSession) session);
@@ -48,8 +49,12 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 	
 	public ApiResponse processResponse(String response, Class<? extends ApiResult> resultClass) {
         log.info(response);
+    this.rawResponse = response;
 		return new XmlApiResponse(response, resultClass);
 	}
-
+	
+	public String getRawResponse() {
+		return this.rawResponse;
+	}
 
 }

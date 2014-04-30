@@ -5,7 +5,6 @@ import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.command.LoginCommand;
 
 public class XmlApiClient extends ApiClient<XmlApiRequest>{
-
 	public XmlApiClient(String url, String username, String password) {
 		this(new XmlApiSession(url, new LoginCommand(username, password)));
 	}
@@ -25,5 +24,9 @@ public class XmlApiClient extends ApiClient<XmlApiRequest>{
 	public String getCommandString(ApiCommand command) {
 		XmlApiRequest request = new XmlApiRequest(command, getSession());
 		return request.marshallCommand();
+	}
+	
+	public XmlApiCommandProcessor getCommandProcessor() {
+		return (XmlApiCommandProcessor) super.getCommandProcessor();
 	}
 }
