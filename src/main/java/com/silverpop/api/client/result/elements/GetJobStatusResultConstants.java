@@ -1,6 +1,6 @@
-package com.silverpop.api.client.result;
+package com.silverpop.api.client.result.elements;
 
-public final class GetJobStatusResultParams {
+public final class GetJobStatusResultConstants {
 	public static final String PARAM_NOT_ALLOWED 		= "NOT_ALLOWED";
 	public static final String PARAM_LIST_ID 				= "LIST_ID";
 	public static final String PARAM_SQL_ADDED 			= "SQL_ADDED";

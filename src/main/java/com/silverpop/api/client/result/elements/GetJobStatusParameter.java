@@ -10,7 +10,9 @@ public class GetJobStatusParameter {
 
     @XStreamAlias("VALUE")
     private String value;
-
+    
+    private GetJobStatusParameter() {}
+    
     private GetJobStatusParameter(String name, String value) {
 			this.name = name;
 			this.value = value;

@@ -59,6 +59,8 @@ public class GetJobStatusResult implements ApiResult {
 
 	@XStreamAlias("PARAMETERS")
 	private GetJobStatusParameters parameters;
+	
+	private GetJobStatusResult(){};
 
 	private GetJobStatusResult(String jobId, Boolean successElement, String jobStatus, String jobDescription, GetJobStatusParameters parameters) {
 		this.jobId = jobId;

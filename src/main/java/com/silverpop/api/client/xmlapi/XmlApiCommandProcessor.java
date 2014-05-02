@@ -48,7 +48,7 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 	
 	
 	public ApiResponse processResponse(String response, Class<? extends ApiResult> resultClass) {
-        log.info(response);
+    log.debug(response);
     this.rawResponse = response;
 		return new XmlApiResponse(response, resultClass);
 	}
