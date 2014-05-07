@@ -21,6 +21,8 @@ public class ExportListCommand implements ApiCommand {
 	public static final String ENCODING_UTF8				= "utf-8";
 	public static final String ENCODING_ISO88591		= "iso-8859-1";
 	
+	public static final String DEFAULT_DATE_FORMAT  = "yyyy-mm-dd";
+	
 	@XStreamAlias("LIST_ID")
 	private String listId;
 	
@@ -43,7 +45,7 @@ public class ExportListCommand implements ApiCommand {
 	private ExportListExportColumns exportColumns;
 	
 	@XStreamAlias("LIST_DATE_FORMAT")
-	private String listDateFormat = "yyyy-mm-dd";
+	private String listDateFormat;
 	
 	public ExportListCommand(String listId, String exportType, String exportFormat, String fileEncoding, String dateStart, String dateEnd, ExportListExportColumns exportColumns, String listDateFormat) {
 		this.listId = listId;
