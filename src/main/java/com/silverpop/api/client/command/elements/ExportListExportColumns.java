@@ -11,7 +11,7 @@ public class ExportListExportColumns {
 	 @XStreamImplicit(itemFieldName="COLUMN")
    public List<String> exportColumns;
 	 
-	 private ExportListExportColumns(List<String> exportColumns) {
+	 public ExportListExportColumns(List<String> exportColumns) {
 		 this.exportColumns = exportColumns;
 	 }
 	 

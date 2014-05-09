@@ -37,9 +37,7 @@ public class ExportListCommandTest extends TestCase {
 			columns.add("Firstname");
 			columns.add("Gender");
 
-			Constructor<ExportListExportColumns> c2 = ExportListExportColumns.class.getDeclaredConstructor(List.class);
-			c2.setAccessible(true);
-			ExportListExportColumns exportColumns = c2.newInstance(columns);
+			ExportListExportColumns exportColumns = new ExportListExportColumns(columns);
 
 			Constructor<ExportListCommand> c3 = ExportListCommand.class.getDeclaredConstructor(String.class, String.class, String.class, String.class, String.class, String.class, ExportListExportColumns.class, String.class);
 			c3.setAccessible(true);
