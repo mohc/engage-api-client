@@ -28,7 +28,7 @@ public class DeleteListCommand implements ApiCommand {
     @XStreamAlias("recursive")
     private boolean isRecursive;
 
-
+    @Override
     public Class<? extends ApiResult> getResultType() {
         return DeleteListResult.class;
     }

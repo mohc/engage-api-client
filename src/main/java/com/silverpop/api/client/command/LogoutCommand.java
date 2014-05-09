@@ -9,6 +9,7 @@ public class LogoutCommand implements ApiCommand {
 
     public LogoutCommand() {}
 
+  	@Override
     public Class<LogoutResult> getResultType() {
         return LogoutResult.class;
     }

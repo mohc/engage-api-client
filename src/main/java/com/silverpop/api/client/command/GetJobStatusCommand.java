@@ -11,7 +11,8 @@ public class GetJobStatusCommand implements ApiCommand {
 
     @XStreamAlias("JOB_ID")
     private String jobId;
-
+    
+    @Override
     public Class<? extends ApiResult> getResultType() {
         return GetJobStatusResult.class;
     }

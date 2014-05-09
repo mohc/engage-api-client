@@ -1,7 +1,6 @@
 package com.silverpop.api.client.xmlapi;
 
 import static org.testng.Assert.*;
-
 import static org.mockito.Mockito.when;
 
 import java.util.Map;
@@ -30,6 +29,7 @@ public class XmlApiRequestTest {
 	
 	@XmlApiProperties("XmlApiCommand")
 	private class XmlApiCommandImpl implements com.silverpop.api.client.ApiCommand {
+		@Override
 		public Class<? extends ApiResult> getResultType() {
 			return ApiResult.class;
 		}

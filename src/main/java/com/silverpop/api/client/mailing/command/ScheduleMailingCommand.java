@@ -3,7 +3,6 @@ package com.silverpop.api.client.mailing.command;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamConverter;
 import com.silverpop.api.client.ApiResult;
-
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.converters.ApiDateParameterConverter;
 import com.silverpop.api.client.ApiCommand;
@@ -18,67 +17,68 @@ public class ScheduleMailingCommand implements ApiCommand {
 
 	@XStreamAlias("TEMPLATE_ID")
 	private Long mailingId;
-	
+
 	@XStreamAlias("LIST_ID")
 	private Integer listId;
-	
+
 	@XStreamAlias("MAILING_NAME")
 	private String mailingName;
-	
+
 	@XStreamAlias("SEND_HTML")
-    private Boolean sendHTML;
+	private Boolean sendHTML;
 
 	@XStreamAlias("SEND_AOL")
-    private Boolean sendAOL;
+	private Boolean sendAOL;
 
 	@XStreamAlias("SEND_TEXT")
-    private Boolean sendText;
+	private Boolean sendText;
 
 	@XStreamAlias("SUBJECT")
-    private String subject;
+	private String subject;
 
 	@XStreamAlias("FROM_NAME")
-    private String fromName;
+	private String fromName;
 
 	@XStreamAlias("FROM_ADDRESS")
-    private String fromAddress;
+	private String fromAddress;
 
 	@XStreamAlias("REPLY_TO")
-    private String replyTo;
+	private String replyTo;
 
 	@XStreamAlias("VISIBILITY")
-    private Integer visibility;
+	private Integer visibility;
 
-    @XStreamAlias("PARENT_FOLDER_PATH")
-    private String parentFolderPath;
+	@XStreamAlias("PARENT_FOLDER_PATH")
+	private String parentFolderPath;
 
-    @XStreamAlias("CREATE_PARENT_FOLDER")
-    private Boolean createParentFolder;
+	@XStreamAlias("CREATE_PARENT_FOLDER")
+	private Boolean createParentFolder;
 
 	@XStreamAlias("SCHEDULED")
-    @XStreamConverter(ApiDateParameterConverter.class)
-    private Date schedule;
+	@XStreamConverter(ApiDateParameterConverter.class)
+	private Date schedule;
 
-    @XStreamAlias("SCHEDULED_IN_GMT")
-    private Boolean isGmt;
+	@XStreamAlias("SCHEDULED_IN_GMT")
+	private Boolean isGmt;
 
 	@XStreamAlias("INBOX_MONITOR")
-    private Boolean useMonitoring;
+	private Boolean useMonitoring;
 
 	@XStreamAlias("SUBSTITUTIONS")
 	private List<ScheduleMailingSubstitution> substitutions;
-	
+
 	@XStreamAlias("SUPPRESSION_LISTS")
 	private ScheduleMailingSuppressionLists suppressionLists;
 
-    @XStreamAlias("PUBLISH_TO_SOCIALS")
-    private List<AuthorizedSocialNetwork> authorizedSocialNetworks;
-	
+	@XStreamAlias("PUBLISH_TO_SOCIALS")
+	private List<AuthorizedSocialNetwork> authorizedSocialNetworks;
+
+	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return ScheduleMailingResult.class;
 	}
-	
-	
+
+
 	public void addSuppressionList(String suppressionListId) {
 		if(suppressionLists == null) {
 			suppressionLists = new ScheduleMailingSuppressionLists();
@@ -205,23 +205,23 @@ public class ScheduleMailingCommand implements ApiCommand {
 	}
 
 
-    public String getParentFolderPath() {
-        return parentFolderPath;
-    }
+	public String getParentFolderPath() {
+		return parentFolderPath;
+	}
 
-    public void setParentFolderPath(String parentFolderPath) {
-        this.parentFolderPath = parentFolderPath;
-    }
+	public void setParentFolderPath(String parentFolderPath) {
+		this.parentFolderPath = parentFolderPath;
+	}
 
-    public Boolean getCreateParentFolder() {
-        return createParentFolder;
-    }
+	public Boolean getCreateParentFolder() {
+		return createParentFolder;
+	}
 
-    public void setCreateParentFolder(Boolean createParentFolder) {
-        this.createParentFolder = createParentFolder;
-    }
+	public void setCreateParentFolder(Boolean createParentFolder) {
+		this.createParentFolder = createParentFolder;
+	}
 
-    public Date getSchedule() {
+	public Date getSchedule() {
 		return schedule;
 	}
 
@@ -230,14 +230,14 @@ public class ScheduleMailingCommand implements ApiCommand {
 		this.schedule = schedule;
 	}
 
-    public Boolean getIsScheduledInGMT() {
-        return isGmt;
-    }
+	public Boolean getIsScheduledInGMT() {
+		return isGmt;
+	}
 
 
-    public void setIsScheduledInGMT(Boolean isGmt) {
-        this.isGmt = isGmt;
-    }
+	public void setIsScheduledInGMT(Boolean isGmt) {
+		this.isGmt = isGmt;
+	}
 
 	public Boolean getUseMonitoring() {
 		return useMonitoring;
@@ -269,11 +269,11 @@ public class ScheduleMailingCommand implements ApiCommand {
 	}
 
 
-    public List<AuthorizedSocialNetwork> getAuthorizedSocialNetworks(){
-        return  authorizedSocialNetworks;
-    }
+	public List<AuthorizedSocialNetwork> getAuthorizedSocialNetworks(){
+		return  authorizedSocialNetworks;
+	}
 
-    public void setAuthorizedSocialNetworks(List<AuthorizedSocialNetwork> authorizedSocialNetworks){
-         this.authorizedSocialNetworks = authorizedSocialNetworks;
-    }
+	public void setAuthorizedSocialNetworks(List<AuthorizedSocialNetwork> authorizedSocialNetworks){
+		this.authorizedSocialNetworks = authorizedSocialNetworks;
+	}
 }

@@ -5,7 +5,6 @@ import java.util.Collection;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.mailing.result.SaveMailingResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XmlApiProperties("SaveMailing")
@@ -23,7 +22,7 @@ public class SaveMailingCommand implements ApiCommand {
 	@XStreamAlias("ForwardToFriend")
 	private SaveMailingForwardToFriend forwardToFriend;
 	
-	
+	@Override
 	public Class<SaveMailingResult> getResultType() {
 		return SaveMailingResult.class;
 	}

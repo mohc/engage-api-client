@@ -1,6 +1,7 @@
 package com.silverpop.api.client.xmlapi;
 
 import java.util.Map;
+
 import org.apache.commons.httpclient.HttpMethodBase;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.logging.Log;
@@ -17,11 +18,12 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
   private Log log = LogFactory.getLog(this.getClass());
   private String rawResponse;
 
+	@Override
 	public XmlApiRequest prepareRequest(ApiCommand command, ApiSession session) {
 		return new XmlApiRequest(command, (XmlApiSession) session);
 	}
 
-	
+	@Override
 	public HttpMethodBase prepareMethod(String url, XmlApiRequest request) {
 		PostMethod postMethod = new PostMethod(url);
 		postMethod = addRequestHeaders(request.getHeaders(), postMethod);
@@ -29,7 +31,7 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 
 		return postMethod;
 	}
-	
+
 	private PostMethod addRequestParameters(Map<String,String> parameters, PostMethod postMethod) {
 		for(String parameter: parameters.keySet()) {
 			postMethod.addParameter(parameter, parameters.get(parameter));
@@ -45,8 +47,7 @@ public class XmlApiCommandProcessor implements ApiCommandProcessor<XmlApiRequest
 		return postMethod;
 	}
 
-	
-	
+	@Override
 	public ApiResponse processResponse(String response, Class<? extends ApiResult> resultClass) {
     log.debug(response);
     this.rawResponse = response;

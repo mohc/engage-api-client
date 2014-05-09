@@ -8,16 +8,19 @@ import com.silverpop.api.client.ApiErrorResult;
  */
 public class NoResponseApiErrorResult implements ApiErrorResult {
 
-    public String getMessage() {
-        return "Response from API is empty or null.";
-    }
+	@Override
+	public String getMessage() {
+		return "Response from API is empty or null.";
+	}
 
-    public boolean isSessionLost() {
-        return true;
-    }
+	@Override
+	public boolean isSessionLost() {
+		return true;
+	}
 
-    public String getResponseText() {
-        return "";
-    }
+	@Override
+	public String getResponseText() {
+		return "";
+	}
 
 }

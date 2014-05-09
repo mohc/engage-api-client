@@ -5,7 +5,6 @@ import java.util.List;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.result.GetProgramsResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XmlApiProperties("GetPrograms")
@@ -28,7 +27,8 @@ public class GetProgramsCommand implements ApiCommand {
 	
 	@XStreamAlias("INCLUDE_TAGS")
 	private IncludeTags includeTags;
-	
+
+	@Override
 	public Class<GetProgramsResult> getResultType() {
 		return GetProgramsResult.class;
 	}

@@ -35,7 +35,8 @@ public class AddRecipientCommand implements ApiCommand {
     public AddRecipientCommand () {
         columns = new ArrayList<Column>();
     }
-
+    
+    @Override
     public Class<RecipientResult> getResultType() {
         return RecipientResult.class;
     }

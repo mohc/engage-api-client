@@ -4,7 +4,6 @@ import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.result.GetListsResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XmlApiProperties("GetLists")
@@ -15,7 +14,8 @@ public class GetListsCommand implements ApiCommand {
 
 	@XStreamAlias("LIST_TYPE")
 	private Integer listType = 0;    // Defaults to Regular lists
-
+	
+	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return GetListsResult.class;
 	}

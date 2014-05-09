@@ -24,7 +24,7 @@ public class SelectRecipientDataCommand implements ApiCommand {
     @XStreamAlias("VISITOR_KEY")
     private String visitorKey;
 
-
+  @Override
 	public Class<? extends ApiResult> getResultType() {
 		return SelectRecipientDataResult.class;
 	}

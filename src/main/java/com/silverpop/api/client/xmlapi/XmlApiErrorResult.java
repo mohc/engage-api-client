@@ -25,15 +25,17 @@ public class XmlApiErrorResult implements ApiErrorResult {
 	@XStreamOmitField
 	private String responseText;
 	
-	
+	@Override
 	public String getMessage() {
 		return faultString;
 	}
 
+	@Override
 	public boolean isSessionLost() {
 		return getDetail().getError().getErrorId() == 145 &&  "SP.Admin".equals(getDetail().getError().getErrorClass());
 	}
 
+	@Override
 	public String getResponseText() {
 		return responseText;
 	}

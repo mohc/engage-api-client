@@ -2,7 +2,6 @@ package com.silverpop.api.client.mailing.command;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.silverpop.api.client.ApiResult;
-
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.mailing.result.AutomateMailingResult;
@@ -18,7 +17,8 @@ public class AutomateMailingCommand implements ApiCommand {
 	
 	@XStreamAlias("STATE")
 	private String state;
-	
+
+	@Override
 	public Class<? extends ApiResult> getResultType() {
 		return AutomateMailingResult.class;
 	}

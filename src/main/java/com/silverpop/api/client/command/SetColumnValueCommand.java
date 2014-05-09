@@ -1,7 +1,6 @@
 package com.silverpop.api.client.command;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
-
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.result.DataJobResult;
@@ -24,6 +23,7 @@ public class SetColumnValueCommand implements ApiCommand{
 	@XStreamAlias("EMAIL")
 	private String email;
 
+	@Override
 	public Class<DataJobResult> getResultType() {
 		return DataJobResult.class;
 	}

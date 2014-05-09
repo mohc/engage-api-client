@@ -5,7 +5,6 @@ import java.util.List;
 import com.silverpop.api.client.XmlApiProperties;
 import com.silverpop.api.client.ApiCommand;
 import com.silverpop.api.client.result.GetProgramsByContactResult;
-
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 @XmlApiProperties("GetProgramsByContact")
@@ -44,7 +43,7 @@ public class GetProgramsByContactCommand implements ApiCommand {
 	@XStreamAlias("INCLUDE_HISTORY")
 	private String includeHistory;
 
-
+	@Override
 	public Class<GetProgramsByContactResult> getResultType() {
 		return GetProgramsByContactResult.class;
 	}

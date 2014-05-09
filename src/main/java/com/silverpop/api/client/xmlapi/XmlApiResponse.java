@@ -12,7 +12,6 @@ import com.silverpop.api.client.ApiResult;
 import com.silverpop.api.client.xmlapi.response.XmlApiResponseEnvelope;
 import com.silverpop.api.client.xmlapi.util.XStreamFactory;
 import com.silverpop.api.client.xmlapi.util.XmlApiReflectionProvider;
-
 import com.thoughtworks.xstream.XStream;
 
 public class XmlApiResponse implements ApiResponse {
@@ -40,12 +39,14 @@ public class XmlApiResponse implements ApiResponse {
 	public String getResponseText() {
 		return responseText;
 	}
-	
+
+	@Override
 	public boolean isSuccessful() {
         return responseText.contains("<SUCCESS>true</SUCCESS>") || responseText.contains("<SUCCESS>TRUE</SUCCESS>" );
 //        return responseText.contains("<SUCCESS>true</SUCCESS>");
 	}
 
+	@Override
 	public ApiResult buildResult() {
 		if(isSuccessful()) {
 			XmlApiResponseEnvelope envelope = processRequest(resultType);
@@ -55,6 +56,7 @@ public class XmlApiResponse implements ApiResponse {
 		}
 	}
 
+	@Override
 	public ApiErrorResult buildErrorResult() {
 		if(isSuccessful()) {
 			throw new ApiException("There is no error associated with this response.  Call buildResult() to get the result.");
